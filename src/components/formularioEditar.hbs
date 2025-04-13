@@ -1,0 +1,16 @@
+{{#each modalEditar}}
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nombre Tarea</label>
+        <input type="text" class="form-control" id="nombreTarea" ria-describedby="emailHelp" placeholder="{{titulo}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Descripción</label>
+        <input type="text" class="form-control" id="descripcionTarea" placeholder="{{descripcion}}">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha Vence</label>
+        <input type="text" class="form-control" id="fechaVenceTarea" placeholder="{{fecha_vence}}">
+    </div>
+</form>
+{{/each}}

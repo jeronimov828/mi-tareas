@@ -1,0 +1,34 @@
+{
+  "name": "vista-principal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch --mode none ",
+    "dev": "webpack serve --mode none"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/bootstrap": "^5.2.10",
+    "@types/jquery": "^3.5.32",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
+    "handlebars": "^4.7.8",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.17.2"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "handlebars-loader": "^1.7.3",
+    "html-webpack-plugin": "^5.6.3",
+    "raw-loader": "^4.0.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
+    "webpack-livereload-plugin": "^3.0.2"
+  }
+}
