@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TablaTareas from "./TablaTareas";
+import MetricsDashboard from "./MetricsDashboard";
 import {
   getTareas,
   cambiarEstadoTarea,
@@ -16,6 +17,7 @@ const TareasPage: React.FC = () => {
   const [modalCrearAbierto, setModalCrearAbierto] = useState(false);
   const [modalEditarAbierto, setModalEditarAbierto] = useState(false);
   const [tareaEditando, setTareaEditando] = useState<Tarea | null>(null);
+  const [showMetrics, setShowMetrics] = useState(false);
 
   useEffect(() => {
     const cargarTareas = async () => {
@@ -186,13 +188,24 @@ const TareasPage: React.FC = () => {
 
   return (
     <div className="container mt-5">
-      <TablaTareas
-        tareas={tareas}
-        onToggleCompletada={handleToggleCompletada}
-        onAbrirModalEditar={handleAbrirModalEditar}
-        onAbrirModalCrear={handleAbrirModalCrear}
-        onLogout={handleLogout}
-      />
+      {showMetrics ? (
+        <MetricsDashboard
+          tareas={tareas}
+          onLogout={handleLogout}
+          onBackToTasks={() => setShowMetrics(false)}
+        />
+      ) : (
+        <>
+          <TablaTareas
+            tareas={tareas}
+            onToggleCompletada={handleToggleCompletada}
+            onAbrirModalEditar={handleAbrirModalEditar}
+            onAbrirModalCrear={handleAbrirModalCrear}
+            onLogout={handleLogout}
+            onShowMetrics={() => setShowMetrics(true)}
+          />
+        </>
+      )}
       {modalCrearAbierto && (
         <div className="modal-overlay">
           <div className="modal-content">
